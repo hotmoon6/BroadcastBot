@@ -30,7 +30,7 @@ Bot = Client(
 async def _(bot, cmd):
     await handle_user_status(bot, cmd)
 
-@Bot.on_message(filters.command("start") & filters.private)
+@Bot.on_message(filters.command("help") & filters.private)
 async def startprivate(client, message):
     # return
     chat_id = message.from_user.id
@@ -48,19 +48,18 @@ async def startprivate(client, message):
     joinButton = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("CHANNEL", url="https://t.me/nacbots"),
                 InlineKeyboardButton(
-                    "SUPPORT GROUP", url="https://t.me/n_a_c_bot_developers"
+                    "JAV GROUP", url="https://t.me/n_a_c_bot_developers"
                 ),
             ]
         ]
     )
-    welcomed = f"Hey <b>{message.from_user.first_name}</b>\nI'm a simple Telegram bot that can broadcast messages and media to the bot subscribers. Made by @NACBOTS.\n\n 🎚 use /settings"
+    welcomed = f"Hey <b>{message.from_user.first_name}</b>\nAsk your Queries and Requests in Private Group of Jav Store"
     await message.reply_text(welcomed, reply_markup=joinButton)
     raise StopPropagation
 
 
-@Bot.on_message(filters.command("settings"))
+@Bot.on_message(filters.command("notification"))
 async def opensettings(bot, cmd):
     user_id = cmd.from_user.id
     await cmd.reply_text(
