@@ -49,7 +49,7 @@ async def startprivate(client, message):
         [
             [
                 InlineKeyboardButton(
-                    "JAV GROUP", url="https://t.me/n_a_c_bot_developers"
+                    "JAV GROUP", url="https://t.me/javsubmovies"
                 ),
             ]
         ]
@@ -63,7 +63,7 @@ async def startprivate(client, message):
 async def opensettings(bot, cmd):
     user_id = cmd.from_user.id
     await cmd.reply_text(
-        f"`Here You Can Set Your Settings:`\n\nSuccessfully setted notifications to **{await db.get_notif(user_id)}**",
+        f"`Here You Can Set Your Notification settings:`\n\nSuccessfully setted notifications to **{await db.get_notif(user_id)}**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
